@@ -1,0 +1,233 @@
+/* =====================
+   Farbpalette
+   ===================== */
+:root {
+    --color-background-light: #fbfbfb;
+    --color-background-white: #ffffff;
+    --color-primary: #9c846c;
+    --color-primary-hover: #2f4858;
+    --color-text-light: #C5C5C5;
+    --color-text-hover: #9c846c;
+    --header-h: 64px;   /* Header-Höhe (für mobile Overlay-Padding) */
+    --gutter: 20px; 
+}
+
+/* =====================
+   Reset & Schrift
+   ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =====================
+   Body & Layout
+   ===================== */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background-light);
+}
+
+/* =====================
+   Header & Navigation
+   ===================== */
+/* Einheitliche Navi-Leiste */
+nav{
+  position: relative;
+  width: 100%;
+  padding: 20px 100px;   /* gleiche Höhe / Seitenabstand wie auf Startseite */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#fff;
+  transition:.5s;
+}
+
+/* Header bekommt KEIN Padding und KEIN Weiß */
+header{
+  position: relative;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+header .logo {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+header .logo:hover {
+    color: var(--color-primary-hover);
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+}
+
+header ul li {
+    margin-left: 40px;
+}
+
+header ul li a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 400;
+}
+header ul li a:hover {
+    color: var(--color-primary-hover);
+}
+
+/* Burger Menü für mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* =====================
+   Gedichte-spezifisch
+   ===================== */
+.gedichte-main { display: flex; flex-direction: column; /* damit Inhalte untereinander bleiben */ align-items: flex-start; /* linksbündig */ padding-top: 80px; padding-left: 100px; /* Abstand vom linken Rand */ padding-bottom: 50px; } .gedicht-container { max-width: 700px; /* Breite des Gedichts */ text-align: left; } .gereiht a:hover { color: var(--color-text-hover); } .gereiht li.meta { display: flex; gap: 2em; /* Abstand zwischen Autor und Datum */ align-items: flex-end; /* vertikal zentrieren */ } .gereiht li.meta span { 
+    display: flex; /* Flex statt inline */
+    align-items: center; /* vertikal zentrieren */
+    gap: 0.3em; /* Abstand zwischen Label und Link */
+}
+
+.gereiht li.meta span {
+    color: var(--color-text-light);
+}
+
+.gereiht li.meta span a {
+    display: inline-block; /* Blockähnlich für saubere Höhe */
+    background-color: transparent;
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+/* Farbe für Autor & Datum */
+.farbe {
+    color: var(--color-text-light); /* helles Grau */
+    text-decoration: none;
+}
+
+.farbe:hover {
+    color: var(--color-text-hover); /* z.B. braun beim Hover */
+    background-color: transparent;  /* Hover bleibt sauber */
+}
+
+
+.gereiht li.meta span a:hover {
+    color: var(--color-text-hover);
+    background-color: transparent; /* Hover bleibt sauber */
+}
+
+/* Linie */
+hr {
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+/* =====================
+   Footer
+   ===================== */
+footer {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    text-align: center;
+}
+footer .impressum {
+    color: grey;
+    font-family: monospace;
+    font-size: 9px;
+    text-decoration: none;
+}
+footer .impressum:hover {
+    color: #A9A9A9;
+}
+
+/* =====================
+   Responsive Navigation
+   ===================== */
+
+
+@media (max-width:768px){
+  nav{ padding: 10px 20px; }   /* gleich wie Startseite */
+  header{ padding: 0; }        /* bleibt 0 */
+}
+
+
+
+
+/* Handy & kleine Tablets */
+@media (max-width: 600px){
+  .gedichte-main{
+    padding-left: 16px;   /* vorher 100px */
+    padding-right: 16px;  /* optional symmetrisch */
+  }
+  .gedicht-container{
+    width: 100%;
+    max-width: 700px;     /* behalte deine Maxbreite */
+  }
+}
+
+
+.nav-active { transform: translateX(0%); }
+
+
+/* Burger-Icon */
+.burger{ display:none; cursor:pointer; z-index:10001; }
+.burger div{
+  width:25px; height:3px; margin:5px;
+  background-color: var(--color-primary);
+  transition: all .3s ease;
+}
+/* Burger-Animation */
+.toggle .line1{ transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line2{ opacity:0; }
+.toggle .line3{ transform: rotate(45deg) translate(-5px, -6px); }
+
+/* Vollbild-Overlay ab 900px und kleiner */
+@media (max-width: 900px){
+  .burger{ display:block; }
+
+  .nav-links{
+    position: fixed;
+    inset: 0;                 /* überdeckt die GANZE Seite */
+    z-index:10000;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    padding: 24px var(--gutter);
+    transform: translateY(-100%);  /* Start: versteckt */
+    transition: transform .3s ease;
+    overflow:auto;                 /* falls viele Links */
+    pointer-events:none;           /* blockt Klicks solange versteckt */
+  }
+  .nav-links.nav-active{
+    transform: translateY(0);      /* sichtbar */
+    pointer-events:auto;
+  }
+}
+/* Body-Scroll sperren, wenn Menü offen (JS toggelt .menu-open am <body>) */
+body.menu-open{ overflow:hidden; }

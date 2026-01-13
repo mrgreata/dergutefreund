@@ -1,0 +1,654 @@
+/*
+    Combined CSS from styles 2021 + 2022
+    Author: mike
+*/
+
+:root {
+    /* ==========================
+       Farbpalette für die Website
+       ========================== */
+    --color-background-light: #fbfbfb;
+    --color-background-white: #ffffff;
+
+    --color-primary: #9c846c;
+    --color-primary-hover: #2f4858;
+
+    --color-secondary-light: #F6F5F7;
+    --color-secondary-hover: #ededed;
+
+    --color-text-light: #C5C5C5;
+    --color-text-hover: #9c846c;
+    --color-text-footer-hover: #A9A9A9;
+
+    --color-nav-mobile-bg: rgb(226, 226, 226);
+
+    --color-line-dark: rgba(0, 0, 0, 0.1);
+    --color-line-light: rgba(255, 255, 255, 0.3);
+
+    --header-h: 64px;
+    --gutter: 20px;
+
+}
+
+
+/* Reset & global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Sections & Layout */
+section {
+    position: relative;
+    width: 100%;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fbfbfb; /*#2596be*/
+    transition: 0.5s;
+}
+
+
+html, body {
+    height: 100%;       /* Body nimmt volle Höhe */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Elemente von oben nach unten anordnen */
+    background-color: #fbfbfb;
+}
+
+
+/* Einheitliche Navi-Leiste */
+nav{
+  position: relative;
+  width: 100%;
+  padding: 20px 100px;   /* gleiche Höhe / Seitenabstand wie auf Startseite */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#fff;
+  transition:.5s;
+}
+
+/* Header bekommt KEIN Padding und KEIN Weiß */
+header{
+  position: relative;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+header .logo {
+    position: relative;
+    max-width: 80px;
+    color: #9c846c;
+    text-decoration: none;
+}
+header .logo:hover {
+    color: #2f4858;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    color: #9c846c;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+}
+header ul li a:hover {
+    color: #2f4858;
+}
+
+
+
+td {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 1400px;
+    border: none;
+}
+
+main {
+    flex: 1; /* füllt den restlichen Platz zwischen Header und Footer */
+    display: flex;
+    justify-content: center; /* horizontal zentriert */
+    align-items: center;     /* vertikal zentriert */
+    padding-top: 80px;       /* Höhe der Navbar abziehen */
+    padding-bottom: 50px;    /* optional, Platz zum Footer */
+}
+
+main li { border-bottom: 1px solid white; margin: 0; } main li a { display: block; padding: 20px 20px 20px 0.5em; background-color: #F6F5F7; color: #2f4858; text-decoration: none; width: 100%; } main li a:hover { background-color: #ededed; color: #9c846c; } main li p { text-align: right; font-size: 10px; height: 0px; color: #C5C5C5; } main li p:hover { color: #2f4858; }
+
+
+
+html > body main li a {
+    width: auto;
+}
+
+/* Inhalt – gereiht */
+.gereiht {
+    font-family: 'Poppins';
+    font-weight: lighter;
+    margin-bottom: -20px; 
+}
+.gereiht li {
+    list-style: none;
+    display: inline-block;
+    margin: auto;
+    color: #C5C5C5;
+    font-size: 13px;
+}
+.gereiht a {
+    display: inline;                /* Inline-Link */
+    background-color: transparent;  /* keine Box */
+    color: var(--color-text-light);
+    text-decoration: none;
+    vertical-align: middle;         /* zentriert den Link vertikal */
+}
+
+.gedichte-main {
+    display: block;       /* statt flex */
+    text-align: left;     /* linksbündig */
+    padding-top: 80px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+}
+
+
+
+.gedicht-container {
+    max-width: 700px;   /* Breite des Gedichts */
+    text-align: left;
+}
+
+
+.gereiht a:hover {
+    color: var(--color-text-hover);
+}
+
+
+.gereiht li.meta {
+    display: flex;
+    gap: 2em;           /* Abstand zwischen Autor und Datum */
+    align-items: flex-end; /* vertikal zentrieren */
+}
+
+.gereiht li.meta span {
+    display: flex;       /* Flex statt inline */
+    align-items: center; /* vertikal zentrieren */
+    gap: 0.3em;          /* Abstand zwischen Label und Link */
+}
+
+.gereiht li.meta span a {
+    display: inline-block; /* Blockähnlich für saubere Höhe */
+    background-color: transparent;
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+
+.gereiht li.meta span a:hover {
+    color: var(--color-text-hover);
+    background-color: transparent; /* Hover bleibt sauber */
+}
+
+
+
+
+
+.farbe {
+    color: #C5C5C5;
+    text-decoration: none;
+}
+.farbe:hover {
+    color: #9c846c;
+}
+
+/* Linie */
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Burger Menü */
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index:10001;
+}
+.burger div {
+    width:25px; height:3px; margin:5px;
+  background-color:#9c846c;           /* oder var(--color-primary) */
+  transition: all .3s ease;
+}
+.toggle .line1{ transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line2{ opacity:0; }
+.toggle .line3{ transform: rotate(45deg) translate(-5px, -6px); }
+
+@media (max-width: 900px){
+    .burger{ display:block; }
+
+  .nav-links{
+    position: fixed;
+    inset: 0;                       /* gesamte Seite überdecken */
+    z-index:10000;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    padding: 24px var(--gutter);
+    transform: translateY(-100%);   /* Start: versteckt */
+    transition: transform .3s ease;
+    overflow:auto;
+    pointer-events:none;
+  }
+  .nav-links.nav-active{
+    transform: translateY(0);       /* sichtbar */
+    pointer-events:auto;
+  }
+
+  /* optional: Links normal sichtbar (deine Animation kann bleiben) */
+  .nav-links li{ opacity:1 }
+}
+
+/* Hintergrund-Scroll sperren, wenn Menü offen (optional, siehe JS) */
+body.menu-open{ overflow:hidden }
+
+@media (max-width:768px){
+  nav{ padding: 10px 20px; }   /* gleich wie Startseite */
+  header{ padding: 0; }        /* bleibt 0 */
+}
+
+
+/*
+@media screen and (max-width:1000px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgb(226, 226, 226);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+        
+
+    .buttons {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #9c846c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .buttons li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+*/
+
+.nav-active {
+    transform: translateX(0%);
+}
+.header-active {
+    transform: translateX(0%);
+}
+
+/* Animation */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes headerLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* Burger toggle states */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Damit Text + Bild bei kleinen Screens umbrechen */
+    gap: 150px;       /* Abstand zwischen Text und Bild */
+    padding: 50px 20px;
+}
+
+.content .textBox{
+  flex: 1 1 300px; /* flexibles Wachstum, minimale Breite 300px */
+    max-width: 600px;
+}
+
+.content .textBox h2{
+    color: #9c846c;
+    font-size: 2em;
+    line-height: 1.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.content .textBox p{
+    color: #2f4858;
+}
+
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #9c846c;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.content .textBox a:hover{
+    background-color: #2f4858;
+}
+
+.content .imgBox{
+    flex: 1 1 300px; /* flexibles Wachstum, minimale Breite 300px */
+    max-width: 700px; /* Bildcontainer nicht zu groß */
+    display: flex;
+    justify-content: flex-end; /* Bild rechts vom Text */
+}
+
+.content .imgBox img{
+    max-width: 100%;       /* Bild passt sich Container an */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Optional: kleinere Screens */
+@media screen and (max-width: 932px) {
+    .content {
+        flex-direction: column; /* Text über Bild */
+        align-items: center;
+    }
+
+    .content .imgBox {
+        justify-content: center; /* Bild zentriert */
+        max-width: 80%;
+    }
+
+    .content .textBox {
+        text-align: center;
+    }
+}
+
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+/*Impressum*/
+
+footer {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+}
+
+
+footer .impressum{
+    text-decoration: none;
+    font-family: monospace;
+    color: grey;
+    font-size: 9px;
+    display: block;
+    margin: auto auto;
+    align-items: center;
+}
+
+footer .impressum:hover{
+    color: #A9A9A9;
+}
+
+
+
+
+/* ===== DerGuteFreund Quiz ===== */
+.dgf-quiz{
+  width:100%;
+  padding: 40px 100px;
+  background: var(--color-background-light);
+  display:flex;
+  justify-content:center;
+}
+
+@media (max-width:768px){
+  .dgf-quiz{ padding: 30px 20px; }
+}
+
+.dgf-quiz-card{
+  width: min(720px, 100%);
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+
+.dgf-quiz-card h2{
+  color: var(--color-primary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.dgf-quiz-muted{
+  color: var(--color-primary-hover);
+  opacity: .85;
+  margin-bottom: 14px;
+}
+
+.dgf-quiz-progress{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+.dgf-quiz-progress span{ color: var(--color-primary-hover); font-size: 14px; }
+
+.dgf-quiz-bar{
+  height: 8px;
+  background: rgba(0,0,0,.08);
+  border-radius: 999px;
+  overflow:hidden;
+}
+#quizBarFill{
+  height:100%;
+  width:0%;
+  background: var(--color-primary);
+  transition: width .25s ease;
+}
+
+.dgf-q{ display:grid; gap:10px; margin: 10px 0 14px; }
+.dgf-q h3{ margin:0; font-size: 18px; color: var(--color-primary-hover); }
+
+.dgf-options{ display:grid; gap:10px; }
+.dgf-option{
+  display:flex; gap:10px; align-items:center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.10);
+  cursor:pointer;
+  color: var(--color-primary-hover);
+  background: #fff;
+}
+.dgf-option:hover{ background: rgba(156,132,108,.08); }
+
+.dgf-option input{ transform: scale(1.1); }
+
+.dgf-text{
+  width:100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.12);
+  outline: none;
+}
+
+.dgf-quiz-actions{ display:flex; gap:10px; justify-content:space-between; margin-top:6px; }
+
+.dgf-btn{
+  border:none;
+  border-radius: 40px;
+  padding: 8px 20px;
+  cursor:pointer;
+  background: var(--color-primary);
+  color:#fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.dgf-btn:hover{ background: var(--color-primary-hover); }
+
+.dgf-btn.secondary{
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid rgba(156,132,108,.55);
+}
+.dgf-btn.secondary:hover{
+  background: rgba(156,132,108,.10);
+  color: var(--color-primary-hover);
+  border-color: rgba(47,72,88,.35);
+}
+
+.dgf-btn:disabled{ opacity:.55; cursor:not-allowed; }
+
+.dgf-quiz-hint{
+  margin-top: 10px;
+  min-height: 18px;
+  color: var(--color-primary-hover);
+  opacity: .85;
+}
+
+.dgf-quiz-done{
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,.08);
+  color: var(--color-primary-hover);
+}
+
+/* ===== MODAL GRUNDSTRUKTUR ===== */
+.dgf-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+/* ===== Modal / Popup ===== */
+.dgf-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: none;          /* hidden by default */
+}
+
+.dgf-modal.is-open{
+  display: block;
+}
+
+.dgf-modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+}
+
+.dgf-modal__panel{
+  position: relative;
+  width: min(720px, calc(100% - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  margin: 16px auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.dgf-modal__close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(0,0,0,.06);
+  color: #2f4858;
+  font-size: 22px;
+  line-height: 1;
+}
+.dgf-modal__close:hover{
+  background: rgba(0,0,0,.10);
+}

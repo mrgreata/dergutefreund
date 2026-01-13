@@ -1,0 +1,187 @@
+:root {
+    /* ==========================
+       Farbpalette für die Website
+       ========================== */
+    --color-background-light: #fbfbfb;
+    --color-background-white: #ffffff;
+
+    --color-primary: #9c846c;
+    --color-primary-hover: #2f4858;
+
+    --color-secondary-light: #F6F5F7;
+    --color-secondary-hover: #ededed;
+
+    --color-text-light: #C5C5C5;
+    --color-text-hover: #9c846c;
+    --color-text-footer-hover: #A9A9A9;
+
+    --color-nav-mobile-bg: rgb(226, 226, 226);
+
+    --color-line-dark: rgba(0, 0, 0, 0.1);
+    --color-line-light: rgba(255, 255, 255, 0.3);
+
+    --header-h: 64px;   /* Header-Höhe */
+    --gutter: 20px;     /* Seitenabstand im mobilen Menü */
+}
+
+
+/* Reset & globale Schrift */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+section {
+    background-color: #fbfbfb;
+}
+
+header .logo {
+    max-width: 80px;
+    color: #9c846c;
+    text-decoration: none;
+}
+header .logo:hover {
+    color: #2f4858;
+}
+
+header ul {
+    display: flex;
+}
+header ul li {
+    list-style: none;
+}
+header ul li a {
+    display: inline-block;
+    color: #9c846c;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+}
+header ul li a:hover {
+    color: #2f4858;
+}
+
+/* Main auf der Gedichte-Seite zentriert */
+main.gedichte {
+    display: flex;
+    justify-content: center;   /* horizontal zentrieren */
+    align-items: flex-start;   /* oben ausgerichtet */
+    padding-top: calc(var(--header-h) + 60px);        /* Abstand nach unten von Header */
+    min-height: calc(100vh - 100px); /* volle Höhe minus Header */
+}
+
+/* Gedichte-Liste */
+main.gedichte .Gedichte {
+    list-style: decimal;
+    list-style-position: outside;
+    padding: 0;
+    margin: 0;
+    width: 80.666%;          /* 2/3 der Seitenbreite */
+}
+
+/* Farbe der Zahlen ändern */
+main.gedichte .Gedichte li::marker {
+    color: #9c846c;   /* gewünschte Farbe */
+    font-weight: bold; /* optional */
+    font-size: 16px;   /* optional */
+}
+
+main.gedichte .Gedichte li:hover::marker {
+    color: #2f4858;  /* Farbe beim Hover */
+}
+
+
+/* Jeder Gedichte-Barren */
+main.gedichte .Gedichte li a {
+    display: block;
+    background-color: #F6F5F7;
+    padding: 15px;
+    color: #2f4858;
+    text-decoration: none;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+main.gedichte .Gedichte li a:hover {
+    background-color: #ededed;
+    color: #9c846c;
+}
+
+main.gedichte .Gedichte li p {
+    font-size: 10px;
+    color: #C5C5C5;
+    margin: 5px 0 0 0;
+    text-align: right;
+}
+
+
+/* Burger wie CSS.css */
+.burger{ display:none; cursor:pointer; }
+.burger div{
+  width:25px; height:3px;
+  background-color: var(--color-primary);
+  margin:5px;
+  transition: all .3s ease;
+}
+.toggle .line1{ transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line2{ opacity:0; }
+.toggle .line3{ transform: rotate(45deg) translate(-5px, -6px); }
+
+/* Vollbild-Menü (Breakpoints wie CSS.css) */
+:root{
+  --header-h: 64px;
+  --gutter: 20px;
+}
+
+/* identisch zu CSS.css: Vollbild-Overlay ab 900px und kleiner */
+@media (max-width: 900px){
+  .burger{
+    display:block;
+    z-index:10001;
+  }
+  .nav-links{
+    position: fixed;
+    inset: 0;                     /* ganze Seite */
+    z-index:10000;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    padding:24px var(--gutter);
+    transform: translateY(-100%); /* versteckt */
+    transition: transform .3s ease;
+    overflow:auto;
+    pointer-events:none;
+  }
+  .nav-links.nav-active{
+    transform: translateY(0);     /* sichtbar */
+    pointer-events:auto;
+  }
+  .nav-links li{ opacity:1; }
+}
+
+/* gleiche weiteren Media Queries wie in CSS.css */
+@media screen and (max-width:768px) {
+  section, nav { padding: 50px 20px; }
+  header { padding: 10px 20px; }
+}
+
+/* optional wie CSS.css: Body scroll lock, wenn Menü offen */
+body.menu-open{ overflow:hidden; }

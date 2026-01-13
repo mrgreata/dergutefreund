@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>DerGuteFreund – Christliche Gedichte & Artikel</title>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="google-site-verification" content="xipASuaG6kNtzeHhDlw9Le_-X7IS1d9TNlLJRVNxYb8" />
+        <link href="CSS.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <script src="tracking.js" defer></script>
+
+    </head>
+                            
+    <body>
+    
+        <nav>
+        
+            <header>
+                        <a href="index.html" class="logo">DerGuteFreund</a>
+                        <!--<div class="toggleMenu" onclick="menuToggle();"></div>-->
+                        <ul class="nav-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="artikel.html">Artikel</a></li>
+                            <li><a href="gedichte.html">Gedichte</a></li>
+                            <li><a href="kontakt.html">Kontakt</a></li>
+                        </ul>
+                        
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                
+            </header>
+        </nav>    
+    
+        <main>
+            <div class="content">
+                
+                <div class="textBox">
+                    <h2>Christliche Gedichte und Artikel</h2>
+                    <p>Sende uns gerne einen Artikel oder ein Gedicht von dir und wir werden es auf dieser Seite veröffentlichen.</p>
+                      <a href="gedichte.html" data-track="CTA: Siehe alle Gedichte">Siehe alle Gedichte</a>
+                      <button id="openQuizBtn" class="dgf-btn secondary">
+                        Quiz starten 💬
+                        </button>
+                </div>
+                <div class="imgBox">
+                    <img src="bild.jpg" class="pepsi" loading="eager">
+                </div>
+            </div>
+        <script src="javamodern.js" type="text/javascript"></script>
+        <script src="quiz.js" defer></script>
+        </main>
+
+        <footer>
+            <a href="impressum.html" class="impressum" >Impressum</a>
+        </footer>
+
+        <div class="dgf-modal" id="quizModal" aria-hidden="true">
+  <div class="dgf-modal__backdrop" id="quizBackdrop"></div>
+
+  <div class="dgf-modal__panel" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <button class="dgf-modal__close" id="quizCloseBtn" aria-label="Schließen">×</button>
+
+    <h2 id="quizTitle">Kurzes Quiz</h2>
+
+    <div class="dgf-quiz-progress">
+      <span id="quizProgressText">Frage 1/3</span>
+      <div class="dgf-quiz-bar"><div id="quizBarFill"></div></div>
+    </div>
+
+    <form id="quizForm">
+      <div id="questionHost"></div>
+
+      <div class="dgf-quiz-actions">
+        <button type="button" id="prevBtn" class="dgf-btn secondary" disabled>Zurück</button>
+        <button type="submit" id="nextBtn" class="dgf-btn">Weiter</button>
+      </div>
+
+      <p class="dgf-quiz-hint" id="quizHint"></p>
+    </form>
+
+    <div id="quizDone" class="dgf-quiz-done" hidden>
+      <h3>Danke! ✅</h3>
+      <p>Deine Antworten wurden gespeichert.</p>
+      <button type="button" id="restartBtn" class="dgf-btn secondary">Nochmal</button>
+      <button type="button" id="quizCloseBtn2" class="dgf-btn" style="margin-left:10px;">Schließen</button>
+    </div>
+  </div>
+</div>
+      
+    </body>
+    
+    
+</html>

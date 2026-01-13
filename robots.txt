@@ -1,0 +1,7 @@
+# robots.txt — dergutefreund.at
+
+User-agent: *
+Allow: /                 # Alles freigeben (inkl. CSS/JS/Bilder)
+# Nichts blocken, damit Google vollständig rendern kann
+
+Sitemap: https://www.dergutefreund.at/sitemap.xml
